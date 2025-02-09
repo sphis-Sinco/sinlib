@@ -13,7 +13,7 @@ class PlayState extends FlxState
                         trace('TryCatch: No Error');
                 });
                 TryCatch.tryCatch(() -> {
-                        x = 0;
+                        throw 0;
                 }, {
                         errFunc: () -> {
                                 trace('TryCatch: Error');
