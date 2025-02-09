@@ -1,7 +1,11 @@
-# 0.0.1 - 2/?/2025
+# 0.0.2 - 2/9/2025
+## Fixed
+- `0.0.1` Changelog date
+## Removed
+- Random enter spaces in the changelog
 
+# 0.0.1 - 2/8/2025
 ## Added
-
 - `Application` - A utility class to make referencing `lime.app.Application.current.meta` easier and it's values.
 	- `META` - `Application.current.meta`
 	- `BUILD` - `Application.current.meta.get('build')`
