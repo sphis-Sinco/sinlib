@@ -11,6 +11,7 @@
         - `listFromString` - Returns an array created from a string
 - `SLGame` - A utility class with quality of life functions that aren't in `FlxG`
         - `isDebug` - Tells if your game is in a debug build
+        - `isWatch` - Tells if your game is in a watch build
 
 # 0.0.1 - 2/8/2025
 ## Added
