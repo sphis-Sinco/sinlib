@@ -1,1 +1,19 @@
 # 0.0.1 - 2/?/2025
+## Added
+- `FileManager` - A utility class used in previous Sinco projects
+    - Version: `9.1` (told you it was used in other projects)
+    - Features:
+        - `SOUND_EXT` variable to control your default sound file extension. Default is "`wav`".
+        - `getPath` function to return a path
+        - `getAssetFile` function to return an `assets/$file`
+        - `SCRIPT_EXT` variable to control the extention of script files. Default is "`lb1`" if `SCRIPT_FILES` is enabled.
+        - `getScriptFile` function to return `assets/data/scripts/$file` if `SCRIPT_FILES_IN_DATA_FOLDER` otherwise returns `assets/scripts/$file` only if `SCRIPT_FILES` is enabled
+        - `getDataFile` function to return `assets/data/$file`
+        - `getImageFile` function to return `assets/images/$file.png`
+        - `getSoundFile` function to return `assets/$file.$SOUND_EXT`. You have to specify the sound folder.
+        - `writeToPath` Writes to a file or path using `sys`
+        - `readFile` Read a file using `lime.utils.Assets` and a try catch function
+        - `getJSON` Reads a file that SHOULD BE A JSON, using `readFile`
+        - `readDirectory` Reads a directory if `sys` via `FileSystem.readDirectory`
+    - `PathTypes` enum abstract with only 1 var:
+        - `DEFAULT` blank string because most projects don't have their file structure as like `assets/default/` instantly

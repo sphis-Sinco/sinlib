@@ -27,7 +27,7 @@ class FileManager
 			MAYBE there is now a feature flag required to be specified for specific functions to function. 
 			I mean these can be big too but yknow. 1 thing at a time.
 	 */
-	public static var FILE_MANAGER_VERSION:Float = 9.0;
+	public static var FILE_MANAGER_VERSION:Float = 9.1;
 
 	/**
 	 * Returns a path
@@ -55,8 +55,8 @@ class FileManager
 	public static var SCRIPT_EXT:String = 'lb1';
 
 	/**
-	 * [Description]
-	 * @param file File
+	 * Returns `assets/data/scripts/$file` if `SCRIPT_FILES_IN_DATA_FOLDER` otherwise returns `assets/scripts/$file` only if `SCRIPT_FILES` is enabled
+     * @param file File
 	 * @param PATH_TYPE Assets folder
 	 * @return String
 	 */
