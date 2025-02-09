@@ -2,7 +2,7 @@
     "name": "Sinlib",
     "url" : "https://github.com/sphis-Sinco/sinlib/",
     "license": "MIT",
-    "tags": [],
+    "tags": ["utility"],
     "description": "This library is in production.",
     "version": "0.0.1",
     "releasenote": "Initial release, everything is working correctly(?)",
