@@ -1,8 +1,8 @@
 package sinlib.utilities;
 
 typedef TryCatchParamaters = {
-    var ?errFunc:Dynamic;
-    var ?traceErr:Bool;
+	var ?errFunc:Dynamic;
+	var ?traceErr:Bool;
 }
 
 class TryCatch {
@@ -16,9 +16,9 @@ class TryCatch {
 			func();
 		} catch (e) {
 			try {
-                if (paramaters.traceErr)
-                    trace(e);
-            } catch(e) { /** This is purely incase you do `tryCatch(funcHere);` **/}
+				if (paramaters.traceErr)
+					trace(e);
+			} catch (e) {/** This is purely incase you do `tryCatch(funcHere);` **/}
 
 			try {
 				paramaters.errFunc();
