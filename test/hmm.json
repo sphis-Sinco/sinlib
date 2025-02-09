@@ -9,7 +9,7 @@
       "name": "sinlib",
       "type": "git",
       "dir": null,
-      "ref": "master",
+      "ref": "indev",
       "url": "https://github.com/sphis-Sinco/sinlib"
     }
   ]
