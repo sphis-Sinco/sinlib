@@ -1,9 +1,28 @@
-# 0.0.1 - 2/?/2025
-
+# 0.0.2 - 2/9/2025
+## Fixed
+- `0.0.1` Changelog date
+## Removed
+- Random enter spaces in the changelog
+- `SLBase.hx`
+## Changed
+- Haxelib description
 ## Added
+- `Arrays` - A utility class with quality of life functions related to arrays
+        - `listFromString` - Returns an array created from a string
+- `SLGame` - A utility class with quality of life functions that aren't in `FlxG`
+        - `isDebug` - Tells if your game is in a debug build
+        - `isWatch` - Tells if your game is in a watch build
+- `UnitTesting` - A utility class which is supposed to be like unit testing for haxe
+        - `testDynamicReturn` - Checks if `func` returns `expectedValue` 
+        - `testBoolReturn` - Uses `testDynamicReturn` to check if `func` returns `expectedValue` 
+        - `testStringReturn` - Uses `testDynamicReturn` to check if `func` returns `expectedValue` 
+        - `testIntReturn` - Uses `testDynamicReturn` to check if `func` returns `expectedValue` 
+        - `testFloatReturn` - Uses `testDynamicReturn` to check if `func` returns `expectedValue` 
 
+# 0.0.1 - 2/8/2025
+## Added
 - `Application` - A utility class to make referencing `lime.app.Application.current.meta` easier and it's values.
-	- `META` - `Application.current.meta`
+        - `META` - `Application.current.meta`
 	- `BUILD` - `Application.current.meta.get('build')`
 	- `COMPANY` - `Application.current.meta.get('company')`
 	- `FILE` - `Application.current.meta.get('file')`
