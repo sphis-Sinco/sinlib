@@ -3,11 +3,14 @@
 - `0.0.1` Changelog date
 ## Removed
 - Random enter spaces in the changelog
+- `SLBase.hx`
 ## Changed
 - Haxelib description
 ## Added
 - `Arrays` - A utility class with quality of life functions related to arrays
         - `listFromString` - Returns an array created from a string
+- `SLGame` - A utility class with quality of life functions that aren't in `FlxG`
+        - `isDebug` - Tells if your game is in a debug build
 
 # 0.0.1 - 2/8/2025
 ## Added

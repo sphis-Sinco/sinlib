@@ -1,5 +1,0 @@
-package sinlib;
-
-class SLBase
-{
-}
