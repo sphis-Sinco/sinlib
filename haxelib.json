@@ -8,6 +8,7 @@
     "releasenote": "Initial release, everything is working correctly(?)",
     "contributors": ["Sinco"],
     "dependencies": {
-      "flixel": ""
+      "flixel": "",
+      "lime": ""
     }
   }
