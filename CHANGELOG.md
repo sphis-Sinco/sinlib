@@ -3,6 +3,8 @@
 - `0.0.1` Changelog date
 ## Removed
 - Random enter spaces in the changelog
+## Changed
+- Haxelib description
 
 # 0.0.1 - 2/8/2025
 ## Added
