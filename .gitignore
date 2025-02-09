@@ -1,0 +1,5 @@
+.haxelib/
+
+# test stuff
+export/
+.DS_Store

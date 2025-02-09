@@ -1,0 +1,16 @@
+{
+  "dependencies": [
+    {
+      "name": "flixel",
+      "type": "haxelib",
+      "version": null
+    },
+    {
+      "name": "sinlib",
+      "type": "git",
+      "dir": null,
+      "ref": "master",
+      "url": "https://github.com/sphis-Sinco/sinlib"
+    }
+  ]
+}
