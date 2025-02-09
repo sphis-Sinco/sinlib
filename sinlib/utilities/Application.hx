@@ -1,6 +1,6 @@
 package sinlib.utilities;
 
-import lime.app.Application;
+import lime.app.Application as App;
 
 class Application {
 	/**
@@ -9,7 +9,7 @@ class Application {
 	public static var META(get, never):Map<String, String>;
 
 	static function get_META():Map<String, String> {
-		return Application.current.meta;
+		return App.current.meta;
 	}
 
 	/**
