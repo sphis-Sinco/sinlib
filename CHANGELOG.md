@@ -5,6 +5,9 @@
 - Random enter spaces in the changelog
 ## Changed
 - Haxelib description
+## Added
+- `Arrays` - A utility class with quality of life functions related to arrays
+        - `listFromString` - Returns an array created from a string
 
 # 0.0.1 - 2/8/2025
 ## Added
