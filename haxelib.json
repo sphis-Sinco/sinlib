@@ -4,8 +4,8 @@
     "license": "MIT",
     "tags": ["utility"],
     "description": "This library is purely for utilities",
-    "version": "0.0.2",
-    "releasenote": "Initial release, everything is working correctly(?)",
+    "version": "0.0.3",
+    "releasenote": "File manager update",
     "contributors": ["Sinco"],
     "dependencies": {
       "flixel": "",

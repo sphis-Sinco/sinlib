@@ -40,9 +40,13 @@ class PlayState extends FlxState
                         UnitTesting.testIntReturn(() -> {unitTestFunc(1);}, 0);
                 }, {
                         errFunc: () -> {
-                                trace('It failed, obviously LMAO');
+                                trace('        It failed, obviously LMAO (also hey, spacing)');
+                   
                         }
                 });
+
+                // 0.0.3
+		trace('images-go-here.txt existance: ${FileManager.exists(FileManager.getAssetFile('images/images-go-here.txt'))}');
 
 		super.create();
 	}
