@@ -7,7 +7,8 @@ import sys.FileSystem;
 import sys.io.File;
 #end
 
-class FileManager {
+class FileManager
+{
 	public static var SOUND_EXT:String = 'wav';
 
 	/**
@@ -26,7 +27,11 @@ class FileManager {
 			MAYBE there is now a feature flag required to be specified for specific functions to function. 
 			I mean these can be big too but yknow. 1 thing at a time.
 	 */
-	public static var FILE_MANAGER_VERSION:Float = 9.1;
+	public static var FILE_MANAGER_VERSION:Float = 9.7;
+
+	public static var UNLOCALIZED_ASSETS:Array<String> = [];
+
+	public static var LOCALIZED_ASSET_SUFFIX:String = '';
 
 	/**
 	 * Returns a path
@@ -36,7 +41,33 @@ class FileManager {
 	 * @return String
 	 */
 	public static function getPath(pathprefix:String, path:String, ?PATH_TYPE:PathTypes = DEFAULT):String
-		return '${pathprefix}${PATH_TYPE}${path}';
+	{
+		var ogreturnpath:String = '${pathprefix}${PATH_TYPE}${path}';
+		var returnpath:String = ogreturnpath;
+
+		#if !DISABLE_LOCALIZED_ASSETS
+		var asset_suffix:String = LOCALIZED_ASSET_SUFFIX;
+		var localizedreturnpath:String = '${ogreturnpath.split('.')[0]}${(asset_suffix.length > 0) ? '-${LOCALIZED_ASSET_SUFFIX}' : ''}.${ogreturnpath.split('.')[1]}';
+
+		if (localizedreturnpath == returnpath)
+			return returnpath;
+
+		if (exists(localizedreturnpath))
+		{
+			return localizedreturnpath;
+		}
+		else
+		{
+			if (UNLOCALIZED_ASSETS.contains(localizedreturnpath))
+				return returnpath;
+
+			#if CNGLA_TRACES trace('Could not get localized asset: ${localizedreturnpath}'); #end
+			UNLOCALIZED_ASSETS.push(localizedreturnpath);
+		}
+		#end
+
+		return returnpath;
+	}
 
 	/**
 	 * Returns an `assets/$file`
@@ -59,7 +90,8 @@ class FileManager {
 	 * @param PATH_TYPE Assets folder
 	 * @return String
 	 */
-	public static function getScriptFile(file:String, ?PATH_TYPE:PathTypes = DEFAULT):String {
+	public static function getScriptFile(file:String, ?PATH_TYPE:PathTypes = DEFAULT):String
+	{
 		var finalPath:Dynamic = 'scripts/$file.$SCRIPT_EXT';
 
 		#if SCRIPT_FILES_IN_DATA_FOLDER
@@ -78,7 +110,8 @@ class FileManager {
 	/**
 	 * Dummy function for if not `SCRIPT_FILES`
 	 */
-	public static function getScriptFile(?file:String = "", ?PATH_TYPE:PathTypes = DEFAULT):String {
+	public static function getScriptFile(?file:String = "", ?PATH_TYPE:PathTypes = DEFAULT):String
+	{
 		return "";
 	}
 	#end
@@ -115,7 +148,8 @@ class FileManager {
 	 * @param path File path
 	 * @param content File content
 	 */
-	public static function writeToPath(path:String, content:String) {
+	public static function writeToPath(path:String, content:String)
+	{
 		#if sys
 		if (path.length > 0)
 			File.saveContent(path, content);
@@ -130,10 +164,14 @@ class FileManager {
 	 * Read a file using `lime.utils.Assets` and a try catch function
 	 * @param path the path of the file your trying to read
 	 */
-	public static function readFile(path:String) {
-		try {
+	public static function readFile(path:String)
+	{
+		try
+		{
 			return Assets.getText(path);
-		} catch (e) {
+		}
+		catch (e)
+		{
 			#if sys
 			trace(e);
 			Sys.exit(0);
@@ -149,7 +187,8 @@ class FileManager {
 	 * Reads a file that SHOULD BE A JSON, using `readFile`
 	 * @param path the path of the json your trying to get
 	 */
-	public static function getJSON(path:String) {
+	public static function getJSON(path:String)
+	{
 		return Json.parse(readFile(path));
 	}
 
@@ -157,18 +196,30 @@ class FileManager {
 	 * Reads a directory if `sys` via `FileSystem.readDirectory`
 	 * @param dir This is the directory being read
 	 */
-	public static function readDirectory(dir:String) {
+	public static function readDirectory(dir:String)
+	{
 		#if sys
 		return FileSystem.readDirectory(dir);
 		#end
 
 		return null;
 	}
+
+	/**
+	 * Returns a bool value if `path` exists
+	 * @param path the path your checking
+	 * @return Bool
+	 */
+	public static function exists(path:String):Bool
+	{
+		return openfl.utils.Assets.exists(path);
+	}
 }
 
 /**
  * This would hold Asset folders, for example `assets/default` or `assets/gameplay`
  */
-enum abstract PathTypes(String) from String to String {
+enum abstract PathTypes(String) from String to String
+{
 	public var DEFAULT:String = "";
 }

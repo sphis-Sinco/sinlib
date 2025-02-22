@@ -1,3 +1,9 @@
+# 0.0.3 - 2/22/2025
+## Changed
+- `FileManager` version is now `9.7`
+        - Automatic asset localization is now possible
+        - `exists` is a function checking for if an asset exists in the game's asset folder
+
 # 0.0.2 - 2/9/2025
 ## Fixed
 - `0.0.1` Changelog date
